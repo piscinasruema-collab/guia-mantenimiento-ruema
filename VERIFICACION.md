@@ -1,6 +1,10 @@
 # Verificación de la guía de Piscinas Ruema
 
-Fecha: 27 de octubre de 2026. Estado: **proyecto local preparado; no publicado**.
+Fecha: 27 de octubre de 2026. Estado: **publicado y verificado en GitHub Pages**.
+
+Web pública: [guía de mantenimiento](https://piscinasruema-collab.github.io/guia-mantenimiento-ruema/). Repositorio público: [piscinasruema-collab/guia-mantenimiento-ruema](https://github.com/piscinasruema-collab/guia-mantenimiento-ruema).
+
+Origen de publicación: `main`, `/(root)`, HTTPS obligatorio. [Despliegue inicial completado correctamente](https://github.com/piscinasruema-collab/guia-mantenimiento-ruema/actions/runs/40504663146), correspondiente al contenido de la guía y el logo. Las actualizaciones posteriores de documentación se guardan también en `main`.
 
 ## Pruebas realizadas
 
@@ -33,19 +37,22 @@ Fecha: 27 de octubre de 2026. Estado: **proyecto local preparado; no publicado**
 | Datos de contacto | Configuración vacía, sin teléfono ni dirección web inventados. |
 | Logotipo oficial incorporado | PNG original aportado por la empresa, idéntico al archivo de origen según SHA-256. Cabecera y pie revisados visualmente en escritorio y móvil de 390 px; proporciones correctas, sin desbordamiento ni errores de consola. |
 | Archivos sensibles | No se incluyen documentos de clientes, el PDF original, claves o archivos de entorno. |
+| Acceso público sin autenticación | HTML, CSS, JS, SVG y PNG responden con HTTP 200 mediante peticiones sin credenciales; todas las respuestas usan HTTPS y coinciden byte a byte con los archivos locales. |
+| Cookies del alojamiento en esas respuestas | Ninguna de las cinco respuestas comprobadas incluye `Set-Cookie`. Esto no excluye el procesamiento de datos técnicos por GitHub. |
+| Funciones en la web publicada | Comprobados el inicio de guía, la selección de ALIVE y cloración salina, el cambio a invernaje, las cinco listas con marcado y desmarcado, y el reinicio al recargar. Sin errores ni avisos en la consola. |
 
 La revisión de código y recursos respalda la ausencia de transmisión de preferencias; no equivale a un análisis independiente del tráfico del proveedor de alojamiento.
 
 ## Pruebas pendientes y límites
 
-- **Publicación y URL pública:** no se han creado ni publicado desde esta sesión. Al abrir la creación de repositorio, GitHub muestra la pantalla de inicio de sesión. La herramienta local de GitHub tampoco tiene sesión iniciada. Hay una conexión de consulta de GitHub disponible, pero no ofrece aquí creación de repositorios ni activación de Pages. El siguiente paso requiere que el usuario inicie sesión. No se ha inventado una URL pública.
+- **Publicación:** completada tras el inicio de sesión del usuario. Se verificó la URL generada por el despliegue; no se requiere cuenta de GitHub para abrir la guía. Los archivos y el historial del repositorio son públicos.
 - **Dispositivos físicos:** no se ha probado en un iPhone/Safari ni en un Android/Chrome reales. Los tamaños de navegador comprobados son simulaciones de anchura, no pruebas de esos sistemas.
 - **Accesibilidad completa:** se han preparado estructura semántica, etiquetas, texto alternativo, foco visible, controles grandes y reducción de movimiento. No se ha realizado una auditoría WCAG completa ni una sesión con lector de pantalla.
 - **Apertura directa del archivo:** el navegador de prueba solo admite HTTP/HTTPS; la apertura mediante `file:` no pudo verificarse. La ejecución local por HTTP sí se probó. El código no utiliza módulos, peticiones ni cargas de datos que requieran un servidor de aplicación.
 - **WhatsApp:** por decisión del usuario, está desactivado. Se comprobó que no hay enlace utilizable ni número ficticio. No se abrió ninguna conversación ni se enviaron mensajes. Si se habilita, habrá que comprobar el destino con el número real.
 - **Restauración desde historial:** se implementó el reinicio con `pageshow` y la limpieza de tareas con `pagehide`; no se ha ensayado la caché de navegación de cada navegador móvil.
 - **Sin JavaScript e impresión:** se incluye texto de alternativa para el checklist y estilos de impresión; no se hizo una prueba visual específica de esos modos. La guía interactiva requiere JavaScript.
-- **Seguridad del alojamiento:** antes de entregar el enlace a clientes hay que comprobar HTTPS, carga pública sin sesión, recursos, consola y pestaña Red en la URL final. No se inspeccionó un alojamiento que todavía no existe.
+- **Seguridad del alojamiento:** HTTPS, acceso público, recursos y consola comprobados en la URL final. No se realizó una captura independiente completa del tráfico del navegador ni una auditoría de la infraestructura de GitHub. Se mantiene la recomendación de revisar la pestaña Red tras futuros cambios.
 - **Validez técnica por instalación:** la documentación se contrastó, pero no se conoce la instalación concreta de cada cliente. Las referencias de membrana no sustituyen un plan de desinfección ni certifican la seguridad del baño.
 
 ## Qué publicar
@@ -54,4 +61,4 @@ Subir únicamente estos ocho archivos del paquete, directamente a la raíz del r
 
 El ZIP es un paquete de entrega: no debe subirse como sustituto de los archivos. Las capturas de revisión y los programas temporales de comprobación están fuera del paquete.
 
-Las instrucciones completas están en `README.md`. Repetir las pruebas críticas después de cada modificación y después de publicar. La incorporación posterior del logotipo se ha comprobado sobre esta misma versión local; no supone una publicación.
+Las instrucciones completas están en `README.md`. Repetir las pruebas críticas después de cada modificación y después de publicar. El logotipo oficial forma parte de la versión publicada y su archivo coincide byte a byte con el original local.
