@@ -1,6 +1,10 @@
 # Guía interactiva de mantenimiento · Piscinas Ruema
 
-Web estática en español para consultar el cuidado de una piscina con lámina armada. Preparada para GitHub Pages, sin instalación, registro, backend ni compilación. Estado: proyecto local terminado; consulta `VERIFICACION.md` para las pruebas y los límites. Este documento no certifica una publicación.
+Web estática en español para consultar el cuidado de una piscina con lámina armada. Publicada en GitHub Pages, sin instalación, registro, backend ni compilación. Publicación y acceso HTTPS comprobados el 27 de octubre de 2026; consulta `VERIFICACION.md` para las pruebas y los límites.
+
+- **Enlace público para clientes:** [abrir la guía](https://piscinasruema-collab.github.io/guia-mantenimiento-ruema/).
+- **Repositorio para administrar archivos:** [piscinasruema-collab/guia-mantenimiento-ruema](https://github.com/piscinasruema-collab/guia-mantenimiento-ruema).
+- **Publicación configurada:** rama `main`, carpeta `/(root)`, HTTPS obligatorio. Para actualizarla, sigue el apartado «5. Actualizar la guía».
 
 ## Abrir y probar
 
@@ -64,7 +68,7 @@ Elegir VOGUE, TOUCH o ALIVE identifica la gama y mantiene las recomendaciones co
 
 - Las preferencias y tareas solo viven en la memoria de la página. Se reinician al cargar, al restaurarla desde la caché de navegación y tras cerrar. No se usan cookies, `localStorage`, `sessionStorage`, IndexedDB ni service workers.
 - No hay formularios de datos personales, autenticación, base de datos, analítica, publicidad, mapas, vídeos, píxeles, fuentes remotas ni scripts de terceros.
-- No se hacen peticiones de aplicación (`fetch`, XHR, WebSocket ni `sendBeacon`). Cargar la web sí requiere peticiones técnicas al alojamiento para HTML, CSS, JS y SVG.
+- No se hacen peticiones de aplicación (`fetch`, XHR, WebSocket ni `sendBeacon`). Cargar la web sí requiere peticiones técnicas al alojamiento para HTML, CSS, JS, SVG y PNG.
 - Los cambios se escriben con `textContent` y creación de nodos. No hay `eval`, `new Function`, `document.write` ni inserción de HTML dinámico.
 - Una política CSP en `index.html` limita los recursos al propio origen y bloquea conexiones de aplicación, objetos y envío de formularios. Los enlaces externos siguen funcionando al pulsarlos. Se aplica una política de no enviar la URL de origen como referente. Los enlaces que abren otra pestaña llevan `noopener noreferrer`.
 - GitHub Pages no permite configurar aquí todos los encabezados HTTP. La CSP en HTML no equivale a una política completa de servidor; por ejemplo, `frame-ancestors` necesita un encabezado y no se simula con una etiqueta meta. No se promete protección absoluta.
